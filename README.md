@@ -1,0 +1,1 @@
+# swa-github-discussion-cleanup
