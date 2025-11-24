@@ -55,19 +55,19 @@ jobs:
 
 ## Inputs
 
-| Input | Required | Default | Description |
-| --- | --- | --- | --- |
-| `github-token` | ✅ | – | Token with `discussions:write` permission on the target repo. |
-| `target-repo` | ❌ | Current repo | Repository whose discussions should be purged (`owner/repo` format). |
-| `discussion-category-name` | ✅ | – | Discussion category that stores invite threads. |
-| `expiration-hours` | ❌ | `168` | Hours after creation to consider a discussion expired. |
-| `discussion-title-template` | ❌ | `SWA access invite for @{login} ({swaName}) - {date}` | Template used when matching invitation threads. |
-| `cleanup-mode` | ❌ | `expiration` | Set to `immediate` to delete all matching discussions regardless of age. |
+| Input                       | Required | Default                                               | Description                                                              |
+| --------------------------- | -------- | ----------------------------------------------------- | ------------------------------------------------------------------------ |
+| `github-token`              | ✅       | –                                                     | Token with `discussions:write` permission on the target repo.            |
+| `target-repo`               | ❌       | Current repo                                          | Repository whose discussions should be purged (`owner/repo` format).     |
+| `discussion-category-name`  | ✅       | –                                                     | Discussion category that stores invite threads.                          |
+| `expiration-hours`          | ❌       | `168`                                                 | Hours after creation to consider a discussion expired.                   |
+| `discussion-title-template` | ❌       | `SWA access invite for @{login} ({swaName}) - {date}` | Template used when matching invitation threads.                          |
+| `cleanup-mode`              | ❌       | `expiration`                                          | Set to `immediate` to delete all matching discussions regardless of age. |
 
 ## Outputs
 
-| Output | Description |
-| --- | --- |
+| Output          | Description                               |
+| --------------- | ----------------------------------------- |
 | `deleted-count` | Number of discussions removed in the run. |
 
 ## Usage Notes
@@ -141,11 +141,11 @@ jobs:
 
 ## Troubleshooting
 
-| Issue | Cause and Solution |
-| --- | --- |
-| `Category "..." not found` | Category name doesn't match or Discussions are disabled. Check Settings. |
+| Issue                                        | Cause and Solution                                                           |
+| -------------------------------------------- | ---------------------------------------------------------------------------- |
+| `Category "..." not found`                   | Category name doesn't match or Discussions are disabled. Check Settings.     |
 | `403 Resource not accessible by integration` | Insufficient `github-token` permissions. Check workflow `permissions` block. |
-| Deleted count is 0 | Title template doesn't match or no expired Discussions exist. |
+| Deleted count is 0                           | Title template doesn't match or no expired Discussions exist.                |
 
 ## Development
 

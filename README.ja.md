@@ -55,19 +55,19 @@ jobs:
 
 ## 入力パラメーター
 
-| 名前 | 必須 | デフォルト | 説明 |
-| --- | --- | --- | --- |
-| `github-token` | ✅ | – | `discussions:write`権限を持つトークン |
-| `target-repo` | ❌ | 現在のリポジトリー | 削除対象のリポジトリー（`owner/repo`形式） |
-| `discussion-category-name` | ✅ | – | 招待Discussionが含まれるカテゴリー名 |
-| `expiration-hours` | ❌ | `168` | 作成からこの時間経過後に削除対象とする（時間） |
-| `discussion-title-template` | ❌ | `SWA access invite for @{login} ({swaName}) - {date}` | 削除対象を特定するためのタイトルテンプレート |
-| `cleanup-mode` | ❌ | `expiration` | `expiration`（期限切れのみ）または`immediate`（即座に全削除） |
+| 名前                        | 必須 | デフォルト                                            | 説明                                                          |
+| --------------------------- | ---- | ----------------------------------------------------- | ------------------------------------------------------------- |
+| `github-token`              | ✅   | –                                                     | `discussions:write`権限を持つトークン                         |
+| `target-repo`               | ❌   | 現在のリポジトリー                                    | 削除対象のリポジトリー（`owner/repo`形式）                    |
+| `discussion-category-name`  | ✅   | –                                                     | 招待Discussionが含まれるカテゴリー名                          |
+| `expiration-hours`          | ❌   | `168`                                                 | 作成からこの時間経過後に削除対象とする（時間）                |
+| `discussion-title-template` | ❌   | `SWA access invite for @{login} ({swaName}) - {date}` | 削除対象を特定するためのタイトルテンプレート                  |
+| `cleanup-mode`              | ❌   | `expiration`                                          | `expiration`（期限切れのみ）または`immediate`（即座に全削除） |
 
 ## 出力
 
-| 名前 | 説明 |
-| --- | --- |
+| 名前            | 説明                 |
+| --------------- | -------------------- |
 | `deleted-count` | 削除したDiscussion数 |
 
 ## 使用上の注意
@@ -141,11 +141,11 @@ jobs:
 
 ## トラブルシューティング
 
-| 問題 | 原因と対処 |
-| --- | --- |
-| `Category "..." not found` | カテゴリー名が一致していないか、Discussionsが無効。Settingsで確認してください |
-| `403 Resource not accessible by integration` | `github-token`の権限不足。workflowの`permissions`ブロックを確認してください |
-| 削除件数が0 | タイトルテンプレートが一致していないか、期限切れDiscussionが存在しません |
+| 問題                                         | 原因と対処                                                                    |
+| -------------------------------------------- | ----------------------------------------------------------------------------- |
+| `Category "..." not found`                   | カテゴリー名が一致していないか、Discussionsが無効。Settingsで確認してください |
+| `403 Resource not accessible by integration` | `github-token`の権限不足。workflowの`permissions`ブロックを確認してください   |
+| 削除件数が0                                  | タイトルテンプレートが一致していないか、期限切れDiscussionが存在しません      |
 
 ## 開発
 
