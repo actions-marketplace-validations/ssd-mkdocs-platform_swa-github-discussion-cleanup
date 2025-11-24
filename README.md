@@ -1,5 +1,7 @@
 # swa-github-discussion-cleanup
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 [日本語](README.ja.md)
 
 GitHub Action that deletes expired Azure Static Web Apps (SWA) invitation Discussions. It is designed to complement [`swa-github-role-sync`](https://github.com/nuitsjp/swa-github-role-sync) workflows by cleaning up temporary invite threads once the expiration window passes.

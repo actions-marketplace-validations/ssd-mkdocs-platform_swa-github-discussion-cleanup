@@ -1,5 +1,7 @@
 # swa-github-discussion-cleanup
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 [English](README.md)
 
 Azure Static Web Apps (SWA) の招待Discussionの有効期限切れを自動削除するGitHub Actionです。[`swa-github-role-sync`](https://github.com/nuitsjp/swa-github-role-sync)と組み合わせて使用することで、招待リンクのライフサイクル管理を完結させることができます。
