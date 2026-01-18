@@ -12,8 +12,8 @@
     "bundle": "npm run package",
     "package": "npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript && npx prettier --write dist/index.js",
     "package:watch": "npm run package -- --watch",
-    "test": "NODE_OPTIONS='--experimental-vm-modules' npx jest",
-    "ci-test": "NODE_OPTIONS='--experimental-vm-modules' npx jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "ci-test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "verify": "npm run format:check && npm run test && npm run package"
   },
   "keywords": [
@@ -28,6 +28,7 @@
     "@actions/core": "^1.11.1",
     "@actions/github": "^6.0.0",
     "@octokit/graphql": "^9.0.3",
+    "bs-logger": "^0.2.6",
     "tslib": "^2.8.1"
   },
   "devDependencies": {

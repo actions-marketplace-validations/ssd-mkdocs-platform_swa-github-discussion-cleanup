@@ -17,15 +17,11 @@ inputs:
   expiration-hours:
     description: Hours after creation to consider a discussion expired.
     required: false
-    default: '168'
-  discussion-title-template:
-    description: Template string that invitation discussions follow.
-    required: false
-    default: 'SWA access invite for @{login} ({swaName}) - {date}'
+    default: "168"
   cleanup-mode:
     description: 'Cleanup mode. "expiration" checks the cutoff time, "immediate" deletes everything.'
     required: false
-    default: 'expiration'
+    default: "expiration"
 runs:
   using: node20
   main: dist/index.js

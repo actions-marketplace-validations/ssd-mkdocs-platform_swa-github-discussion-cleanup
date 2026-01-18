@@ -1,29 +1,29 @@
-import commonjs from '@rollup/plugin-commonjs'
-import nodeResolve from '@rollup/plugin-node-resolve'
-import typescript from '@rollup/plugin-typescript'
+import commonjs from "@rollup/plugin-commonjs";
+import nodeResolve from "@rollup/plugin-node-resolve";
+import typescript from "@rollup/plugin-typescript";
 
 const config = [
   {
-    input: 'src/main.ts',
+    input: "src/main.ts",
     output: {
       esModule: true,
-      file: 'dist/index.js',
-      format: 'es',
-      sourcemap: true
+      file: "dist/index.js",
+      format: "es",
+      sourcemap: true,
     },
     plugins: [typescript(), nodeResolve({ preferBuiltins: true }), commonjs()],
     onwarn(warning, warn) {
       if (
-        warning.code === 'CIRCULAR_DEPENDENCY' &&
+        warning.code === "CIRCULAR_DEPENDENCY" &&
         warning.ids?.some((id) =>
-          /[/\\]node_modules[/\\]@actions[/\\]core/.test(id)
+          /[/\\]node_modules[/\\]@actions[/\\]core/.test(id),
         )
       ) {
-        return
+        return;
       }
-      warn(warning)
-    }
-  }
-]
+      warn(warning);
+    },
+  },
+];
 
-export default config
+export default config;

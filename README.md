@@ -61,7 +61,7 @@ This repository provides the following two reusable GitHub Actions:
 ### swa-github-discussion-cleanup
 
 - Automatic deletion of expired Discussions based on creation date
-- Filtering of deletion targets using title templates
+- Only delete discussions matching the specified category
 - Immediate deletion mode for manual execution
 
 ## Prerequisites
@@ -190,7 +190,7 @@ name: Sync SWA roles
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * 1'
+    - cron: "0 3 * * 1"
 
 jobs:
   sync:
@@ -223,7 +223,7 @@ Setting `cleanup-mode` to `immediate` enables immediate deletion during manual e
 name: Cleanup invite discussions
 on:
   schedule:
-    - cron: '0 4 * * 1'
+    - cron: "0 4 * * 1"
   workflow_dispatch:
 
 jobs:
@@ -367,7 +367,7 @@ You can configure SWA role names corresponding to each GitHub permission:
 - **Sync based on another repository's permissions**
   Specify `owner/repo` in `target-repo` and provide a PAT with access to the target repository in `github-token`.
 - **Changing templates**
-  Templates support placeholders such as `{login}`, `{role}`, `{inviteUrl}`, `{swaName}`, `{repo}`, `{date}`. Configure the same template on the Discussion cleanup side as well.
+  Templates support placeholders such as `{login}`, `{role}`, `{inviteUrl}`, `{swaName}`, `{repo}`, and `{date}`. The cleanup action does not use title templates, so no configuration is required there.
 - **Invitation link expiration**
   Changing `invitation-expiration-hours` (default 168 hours) requires matching the `expiration-hours` in the cleanup workflow.
 - **Using custom domain**
